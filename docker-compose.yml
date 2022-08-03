@@ -1,0 +1,16 @@
+services:
+    jira:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "2990:2990"
+        volumes:
+            - atlassian_sdk_opt:/opt
+            - atlassian_sdk_app:/app
+            - atlassian_sdk_amps:/amps-standalone-jira-LATEST
+
+volumes:
+    atlassian_sdk_opt:
+    atlassian_sdk_app:
+    atlassian_sdk_amps:
